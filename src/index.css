@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: #fff;
+        --text: #000;
+        --subtitle: #666;
+        --card: #eee;
+        --border: #ccc;
+        --blue: #160ae9;
+    }
+
+    :root[class~="dark"] {
+        --background: #000;
+        --text: #fff;
+        --subtitle: #999;
+        --card: #333;
+        --border: #666;
+        --blue: #5951ff;
+    }
+}
+
+body {
+    background-color: var(--background);
+}
+
+.ProseMirror p.is-editor-empty:first-child::before {
+    color: #adb5bd;
+    content: attr(data-placeholder);
+    float: left;
+    height: 0;
+    pointer-events: none;
+}
+
+.ProseMirror {
+    outline: none;
+    height: 100%;
+}
+
+a {
+    color: var(--blue);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+[data-radix-popper-content-wrapper] {
+    transform: translate(calc(100vw - 105px), 30px) !important;
+}
